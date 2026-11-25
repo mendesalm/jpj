@@ -29,7 +29,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "dist"
           target: "/var/www/html/dist_tmp"
-      # 5. Ajusta pastas e ativa nova versão
+      # 5. Ajusta pastas, configura Nginx/SSL e ativa nova versão
       - name: Activate new build
         uses: appleboy/ssh-action@master
         with:
@@ -37,9 +37,43 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -e
             sudo rm -rf /var/www/html/dist_old
             sudo mv /var/www/html/dist /var/www/html/dist_old || true
             sudo mv /var/www/html/dist_tmp/dist /var/www/html/dist
             sudo chown -R www-data:www-data /var/www/html/dist
             sudo chmod -R 755 /var/www/html/dist
+
+            NGINX_CONF="/etc/nginx/sites-available/lojajoaopedrojunqueira.com.br"
+            if [ ! -f "$NGINX_CONF" ]; then
+              sudo tee "$NGINX_CONF" > /dev/null <<'EOF'
+            server {
+                listen 80;
+                listen [::]:80;
+                server_name lojajoaopedrojunqueira.com.br www.lojajoaopedrojunqueira.com.br;
+
+                root /var/www/html/dist;
+                index index.html;
+
+                location = /confirmacao {
+                    return 302 https://lojas.e-sigma.app/confirmacao/jpj$is_args$args;
+                }
+
+                location ^~ /confirmacao/ {
+                    return 302 https://lojas.e-sigma.app/confirmacao/jpj$is_args$args;
+                }
+
+                location / {
+                    try_files $uri $uri/ /index.html;
+                }
+            }
+            EOF
+            fi
+            sudo ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/lojajoaopedrojunqueira.com.br
+
+            if [ ! -f /etc/letsencrypt/live/lojajoaopedrojunqueira.com.br/fullchain.pem ]; then
+              sudo certbot --nginx -d lojajoaopedrojunqueira.com.br -d www.lojajoaopedrojunqueira.com.br --non-interactive --agree-tos --register-unsafely-without-email --redirect
+            fi
+
+            sudo nginx -t
             sudo systemctl reload nginx
