@@ -1,0 +1,280 @@
+.rito-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.rito-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rito-hero {
+  padding: 132px 24px 48px;
+}
+
+.rito-hero-card {
+  border-radius: var(--radius-xl);
+  background: var(--dark-glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--dark-glass-border);
+  padding: 44px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.rito-hero-top {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.rito-hero-emblem {
+  width: 92px;
+  height: 92px;
+  border-radius: var(--radius-lg);
+  background: var(--dark-accent-soft);
+  border: 1px solid rgba(226, 180, 90, 0.35);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rito-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rito-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rito-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--dark-on-surface);
+}
+
+.rito-hero-subtitle {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--dark-on-surface-variant);
+  max-width: 720px;
+}
+
+.rito-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--dark-glass-border);
+}
+
+.rito-timeline-section,
+.rito-degrees-section {
+  padding: 48px 24px;
+}
+
+.rito-degrees-section {
+  padding-bottom: 84px;
+}
+
+.rito-section-heading {
+  margin-bottom: 32px;
+}
+
+.rito-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.rito-timeline-card,
+.rito-degree-card {
+  border-radius: var(--radius-lg);
+  background: var(--dark-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--dark-glass-border);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.rito-timeline-card:hover,
+.rito-degree-card:hover {
+  border-color: rgba(226, 180, 90, 0.35);
+  transform: translateY(-2px);
+}
+
+.rito-timeline-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rito-year-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark-on-primary);
+  background: var(--dark-primary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.rito-date-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--dark-on-surface-variant);
+}
+
+.rito-card-title {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-on-surface);
+}
+
+.rito-role-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--dark-primary);
+}
+
+.rito-card-body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--dark-on-surface-variant);
+}
+
+.rito-degrees-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.rito-degree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rito-degree-range {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dark-primary);
+  background: var(--dark-accent-soft);
+  border: 1px solid rgba(226, 180, 90, 0.32);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.rito-degree-body-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--dark-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rito-degree-focus {
+  font-family: var(--font-headline);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--dark-on-surface);
+}
+
+.rito-lodge-callout {
+  border-radius: var(--radius-xl);
+  background: var(--dark-glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--dark-glass-border);
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.rito-callout-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 700px;
+}
+
+.rito-callout-title {
+  font-family: var(--font-headline);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--dark-on-surface);
+}
+
+.rito-callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .rito-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rito-lodge-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rito-hero {
+    padding: 112px 16px 36px;
+  }
+
+  .rito-hero-card {
+    padding: 26px 20px;
+  }
+
+  .rito-hero-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .rito-degrees-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rito-timeline-section,
+  .rito-degrees-section {
+    padding: 36px 16px;
+  }
+}

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./HomePage.css";
 import LocationSection from "../../../components/location/LocationSection.jsx";
 import Footer from "../../../components/footer/Footer.jsx";
 import imgSlider2 from "../../images/slider/slider2.jpg";
 import ritoIcon from "../../images/RitoBrasileiro.png";
-import { LOJAS_URL, CONFIRMACAO_URL } from "../../../config/links";
+import { LOJAS_URL } from "../../../config/links";
 
 const HomePage = () => {
   const location = useLocation();
@@ -26,67 +26,62 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <main className="home-main">
-        {/* Full-Bleed Atmospheric Glassmorphism Hero */}
+        {/* Split Atmospheric Glassmorphism Hero (100vh) */}
         <section id="inicio" className="hero-section" aria-label="Início">
-          <div className="hero-backdrop" aria-hidden="true">
-            <img
-              src={imgSlider2}
-              alt="Interior do Templo da Loja Maçônica João Pedro Junqueira nº 2181"
-              className="hero-backdrop-img"
-            />
-            <div className="hero-backdrop-gradient"></div>
-          </div>
-
           <div className="hero-container">
-            <div className="hero-glass-panel">
-              <div className="hero-badge">
-                <span className="material-symbols-outlined hero-badge-icon" aria-hidden="true">
-                  auto_awesome
-                </span>
-                <span>ARLS Nº 2181 · Anápolis, Goiás</span>
-              </div>
-
-              <h1 className="hero-title">Loja João Pedro Junqueira</h1>
-
-              <p className="hero-description">
-                Há 43 anos tornando melhores os Homens de Bem — uma Oficina dedicada à sabedoria, à fraternidade e ao aperfeiçoamento ético e intelectual.
-              </p>
-
-              <div className="hero-cta-row">
-                <a href="#sobre-nos" className="btn-primary-gold">
-                  <span>Explorar Nossa Missão</span>
-                  <span className="material-symbols-outlined" aria-hidden="true">
-                    arrow_downward
+            <div className="hero-split-grid">
+              <div className="hero-glass-panel">
+                <div className="hero-badge">
+                  <span className="material-symbols-outlined hero-badge-icon" aria-hidden="true">
+                    auto_awesome
                   </span>
-                </a>
-                <a href={CONFIRMACAO_URL} className="btn-glass">
-                  <span className="material-symbols-outlined hero-cta-icon-gold" aria-hidden="true">
-                    event_available
-                  </span>
-                  <span>Confirmar Presença</span>
-                </a>
-                <a href="#localizacao" className="btn-glass">
-                  <span className="material-symbols-outlined hero-cta-icon-gold" aria-hidden="true">
-                    location_on
-                  </span>
-                  <span>Localização do Templo</span>
-                </a>
-              </div>
-
-              <div className="hero-meta-strip">
-                <div className="hero-meta-item">
-                  <span className="hero-meta-label">Tradição</span>
-                  <span className="hero-meta-value tabular-nums">43 anos de história</span>
+                  <span>ARLS Nº 2181 · Anápolis, Goiás</span>
                 </div>
-                <div className="hero-meta-item">
-                  <span className="hero-meta-label">Rito Praticado</span>
-                  <span className="hero-meta-value">Rito Brasileiro</span>
+
+                <h1 className="hero-title">Loja João Pedro Junqueira</h1>
+
+                <p className="hero-description">
+                  Há 44 anos tornando melhores os Homens de Bem — uma Oficina dedicada à sabedoria, à fraternidade e ao aperfeiçoamento ético e intelectual.
+                </p>
+
+                <div className="hero-cta-row">
+                  <a href="#sobre-nos" className="btn-primary-gold">
+                    <span>Explorar Nossa Missão</span>
+                    <span className="material-symbols-outlined" aria-hidden="true">
+                      arrow_downward
+                    </span>
+                  </a>
+                  <a href="#localizacao" className="btn-glass">
+                    <span className="material-symbols-outlined hero-cta-icon-gold" aria-hidden="true">
+                      location_on
+                    </span>
+                    <span>Localização do Templo</span>
+                  </a>
                 </div>
-                <div className="hero-meta-item">
-                  <span className="hero-meta-label">Sessões Ordinárias</span>
-                  <span className="hero-meta-value tabular-nums">Terças-feiras, 20h00</span>
+
+                <div className="hero-meta-strip">
+                  <div className="hero-meta-item">
+                    <span className="hero-meta-label">Tradição</span>
+                    <span className="hero-meta-value tabular-nums">44 anos de história</span>
+                  </div>
+                  <div className="hero-meta-item">
+                    <span className="hero-meta-label">Rito Praticado</span>
+                    <span className="hero-meta-value">Rito Brasileiro</span>
+                  </div>
+                  <div className="hero-meta-item">
+                    <span className="hero-meta-label">Sessões Ordinárias</span>
+                    <span className="hero-meta-value tabular-nums">Sextas-feiras, 19h30min</span>
+                  </div>
                 </div>
               </div>
+
+              <figure className="hero-media-frame">
+                <img
+                  src={imgSlider2}
+                  alt="Interior do Templo da Loja Maçônica João Pedro Junqueira nº 2181"
+                  className="hero-media-img"
+                />
+              </figure>
             </div>
           </div>
         </section>
@@ -175,6 +170,14 @@ const HomePage = () => {
                 <p className="rito-feature-body">
                   Nossa Loja pratica o Rito Brasileiro e oferece uma jornada completa de desenvolvimento maçônico. Para os Mestres que aspiram aprofundar seus conhecimentos, o caminho se estende através dos Graus Filosóficos. A Loja sedia o Sublime Capítulo &ldquo;José de Lima Júnior&rdquo; e o Conselho Kadoshi &ldquo;Pedro Moreira de Lima&rdquo;, conferidos pelo Supremo Conclave do Brasil para o Rito Brasileiro de Maçons Antigos, Livres e Aceitos — abrangendo os 30 primeiros graus dessa jornada rumo ao Grau 33.
                 </p>
+                <div style={{ paddingTop: "6px" }}>
+                  <Link to="/rito-brasileiro" className="btn-glass">
+                    <span>Conhecer a História do Rito</span>
+                    <span className="material-symbols-outlined" aria-hidden="true">
+                      arrow_forward
+                    </span>
+                  </Link>
+                </div>
               </div>
 
               <div className="rito-feature-stat">
@@ -196,24 +199,18 @@ const HomePage = () => {
               <div className="contact-copy">
                 <span className="section-eyebrow">Visitação &amp; Secretaria</span>
                 <h2 className="contact-title">
-                  Confirme sua presença ou acesse o Sistema Lojas
+                  Acesse o Sistema Lojas
                 </h2>
                 <p className="contact-body">
-                  Irmãos visitantes regulares podem confirmar presença para nossas sessões ordinárias às terças-feiras, às 20h00. Obreiros da Oficina têm acesso direto ao portal administrativo pelo Sistema Lojas.
+                  Nossas sessões ordinárias acontecem às sextas-feiras, às 19h30min. Obreiros da Oficina têm acesso direto ao portal administrativo pelo Sistema Lojas.
                 </p>
               </div>
               <div className="contact-actions">
-                <a href={CONFIRMACAO_URL} className="btn-glass">
-                  <span className="material-symbols-outlined hero-cta-icon-gold" aria-hidden="true">
-                    event_available
-                  </span>
-                  <span>Confirmar Presença</span>
-                </a>
                 <a href={LOJAS_URL} className="btn-primary-gold">
                   <span className="material-symbols-outlined" aria-hidden="true">
                     login
                   </span>
-                  <span>Acesso ao Sistema Lojas</span>
+                  <span>Sistema Lojas</span>
                 </a>
               </div>
             </div>

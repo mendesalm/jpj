@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logoImagem from "../../assets/images/logo_jpg.png";
-import { LOJAS_URL, CONFIRMACAO_URL } from "../../config/links";
+import { LOJAS_URL } from "../../config/links";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,8 +29,12 @@ const Header = () => {
             className="header-logo"
           />
           <div className="header-brand-text">
-            <span className="header-title">João Pedro Junqueira</span>
-            <span className="header-subtitle">ARLS Nº 2181</span>
+            <span className="header-title">
+              Loja Maçônica João Pedro Junqueira, nº 2181
+            </span>
+            <span className="header-subtitle">
+              Federada ao GOB e Jurisdicionada ao GOB-GO
+            </span>
           </div>
         </Link>
 
@@ -47,7 +51,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/#rito" onClick={closeMenu}>
+              <Link to="/rito-brasileiro" onClick={closeMenu}>
                 Rito Brasileiro
               </Link>
             </li>
@@ -56,28 +60,16 @@ const Header = () => {
                 Localização
               </Link>
             </li>
-            <li>
-              <Link to="/#contato" onClick={closeMenu}>
-                Contato
-              </Link>
-            </li>
           </ul>
         </nav>
 
         <div className="header-actions-desktop">
           <a
-            href={CONFIRMACAO_URL}
-            onClick={closeMenu}
-            className="btn-glass header-btn"
-          >
-            Confirmar Presença
-          </a>
-          <a
             href={LOJAS_URL}
             onClick={closeMenu}
             className="btn-primary-gold header-btn"
           >
-            Acesso ao Sistema Lojas
+            Sistema Lojas
           </a>
         </div>
 
@@ -118,26 +110,14 @@ const Header = () => {
                   Localização
                 </Link>
               </li>
-              <li>
-                <Link to="/#contato" onClick={closeMenu}>
-                  Contato
-                </Link>
-              </li>
             </ul>
             <div className="mobile-actions">
-              <a
-                href={CONFIRMACAO_URL}
-                onClick={closeMenu}
-                className="btn-glass mobile-action-btn"
-              >
-                Confirmar Presença
-              </a>
               <a
                 href={LOJAS_URL}
                 onClick={closeMenu}
                 className="btn-primary-gold mobile-action-btn"
               >
-                Acesso ao Sistema Lojas
+                Sistema Lojas
               </a>
             </div>
           </nav>

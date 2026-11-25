@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header.jsx";
 import HomePage from "./assets/pages/home/HomePage.jsx";
+import RitoBrasileiroPage from "./assets/pages/rito/RitoBrasileiroPage.jsx";
 import { LOJAS_URL } from "./config/links";
 
 const RedirecionarLojas = () => {
@@ -36,6 +37,15 @@ function App() {
             <>
               <Header />
               <HomePage />
+            </>
+          }
+        />
+        <Route
+          path="/rito-brasileiro"
+          element={
+            <>
+              <Header />
+              <RitoBrasileiroPage />
             </>
           }
         />

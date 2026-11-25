@@ -1,6 +1,5 @@
 import React from "react";
 import "./LocationSection.css";
-import { CONFIRMACAO_URL } from "../../config/links";
 
 const GOOGLE_MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/search/?api=1&query=Loja+Ma%C3%A7%C3%B4nica+Jo%C3%A3o+Pedro+Junqueira+An%C3%A1polis+GO";
@@ -15,7 +14,7 @@ const LocationSection = () => {
             <h2 className="section-title">Localização do Templo</h2>
           </div>
           <p className="location-lead">
-            Irmãos visitantes regulares e interessados podem consultar a localização em Anápolis e confirmar presença junto à secretaria.
+            Irmãos visitantes regulares e interessados podem consultar a localização do templo em Anápolis, Goiás.
           </p>
         </div>
 
@@ -45,7 +44,7 @@ const LocationSection = () => {
                 <p>
                   Anápolis — Goiás
                   <br />
-                  Atendimento e visitação mediante confirmação prévia
+                  Federada ao GOB e Jurisdicionada ao GOB-GO
                 </p>
               </div>
               <div className="location-detail-row">
@@ -53,7 +52,7 @@ const LocationSection = () => {
                   schedule
                 </span>
                 <p className="tabular-nums">
-                  Sessões ordinárias às terças-feiras, 20h00
+                  Sessões ordinárias às sextas-feiras, 19h30min
                 </p>
               </div>
               <div className="location-detail-row">
@@ -75,9 +74,6 @@ const LocationSection = () => {
                   directions
                 </span>
                 <span>Traçar rota</span>
-              </a>
-              <a href={CONFIRMACAO_URL} className="btn-glass">
-                <span>Confirmar Presença</span>
               </a>
             </div>
           </article>

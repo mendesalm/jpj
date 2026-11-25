@@ -51,46 +51,29 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section (100vh Split Layout) --- */
 .hero-section {
   position: relative;
-  min-height: 88vh;
-  padding: 132px 24px 84px;
+  min-height: 100vh;
+  padding: 104px 24px 36px;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-.hero-backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-backdrop-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-backdrop-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 15, 24, 0.78) 0%,
-    rgba(10, 15, 24, 0.62) 55%,
-    var(--dark-surface) 100%
-  );
-}
-
 .hero-container {
   position: relative;
   z-index: 1;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+}
+
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: center;
 }
 
 .hero-glass-panel {
@@ -99,12 +82,31 @@
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--dark-glass-border);
-  padding: 48px;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+  padding: 36px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 22px;
+  gap: 18px;
+}
+
+.hero-media-frame {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--dark-glass-border);
+  background: var(--dark-surface-elevated);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 4 / 3;
+  max-height: calc(100vh - 150px);
+  width: 100%;
+}
+
+.hero-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hero-badge {
@@ -188,21 +190,25 @@
   color: var(--dark-on-surface);
 }
 
-/* --- Mission, Vision & Values Section --- */
+/* --- Mission, Vision & Values Section (100vh) --- */
 .pillars-section {
-  padding: 72px 24px;
+  min-height: 100vh;
+  padding: 104px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pillars-heading {
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 20px;
   align-items: stretch;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .glass-card {
@@ -212,10 +218,10 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--dark-glass-border);
-  padding: 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -413,6 +419,20 @@
 
 /* --- Responsive Breakpoints --- */
 @media (max-width: 1024px) {
+  .hero-section,
+  .pillars-section {
+    min-height: auto;
+  }
+
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-media-frame {
+    max-height: none;
+  }
+
   .pillars-grid {
     grid-template-columns: 1fr;
   }
