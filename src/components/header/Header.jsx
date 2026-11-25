@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logoImagem from "../../assets/images/logo_jpg.png";
+
+const LOJAS_URL = import.meta.env.VITE_LOJAS_URL || "https://lojas.e-sigma.app";
+const CONFIRMACAO_URL =
+  import.meta.env.VITE_CONFIRMACAO_URL ||
+  "https://lojajoaopedrojunqueira.com.br/confirmacao";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
 
-  // Use o nosso contexto de autenticação
-  const { isAuthenticated, user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  // Efeito para o estilo do header ao rolar a página
   useEffect(() => {
     const handleScroll = () => {
       setIsHeaderScrolled(window.scrollY > 50);
@@ -21,17 +20,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLogout = () => {
-    logout();
-    setIsMenuOpen(false); // Fecha o menu ao fazer logout
-    navigate("/"); // Redireciona para a página inicial
-  };
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    // Adicione a classe 'scrolled' dinamicamente
     <header className={`app-header ${isHeaderScrolled ? "scrolled" : ""}`}>
       <div className="header-content">
         <Link to="/" onClick={closeMenu} className="header-logo-link">
@@ -57,24 +49,20 @@ const Header = () => {
             <li><Link to="/#contato" onClick={closeMenu}>Contato</Link></li>
           </ul>
           <div className="nav-links-auth">
-            {isAuthenticated ? (
-              <>
-                <Link to="/dashboard" onClick={closeMenu} className="glass-button">
-                  Área Restrita
-                </Link>
-                <a
-                  href="#!"
-                  onClick={handleLogout}
-                  className="logout-link"
-                >
-                  Logout {user?.NomeCompleto && `(${user.NomeCompleto.split(" ")[0]})`}
-                </a>
-              </>
-            ) : (
-              <Link to="/login" onClick={closeMenu} className="glass-button">
-                Login
-              </Link>
-            )}
+            <a
+              href={CONFIRMACAO_URL}
+              onClick={closeMenu}
+              className="glass-button"
+            >
+              Confirmar Presença
+            </a>
+            <a
+              href={LOJAS_URL}
+              onClick={closeMenu}
+              className="glass-button"
+            >
+              Acesso ao Sistema Lojas
+            </a>
           </div>
         </nav>
       </div>
