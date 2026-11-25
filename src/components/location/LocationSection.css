@@ -1,6 +1,6 @@
 .location-section {
   min-height: 100vh;
-  padding: 104px 24px 40px;
+  padding: 96px 24px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,14 +11,14 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .location-lead {
   max-width: 440px;
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 14.5px;
+  line-height: 1.55;
   color: var(--dark-on-surface-variant);
 }
 
@@ -28,10 +28,10 @@
   overflow: hidden;
   border: 1px solid var(--dark-glass-border);
   background: var(--dark-surface-elevated);
-  min-height: 500px;
+  height: clamp(380px, 62vh, 520px);
   display: flex;
   align-items: center;
-  padding: 36px;
+  padding: 28px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
