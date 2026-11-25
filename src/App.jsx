@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header.jsx";
 import HomePage from "./assets/pages/home/HomePage.jsx";
-
-const LOJAS_URL = import.meta.env.VITE_LOJAS_URL || "https://lojas.e-sigma.app";
+import { LOJAS_URL } from "./config/links";
 
 const RedirecionarLojas = () => {
   useEffect(() => {
