@@ -1,7 +1,7 @@
 .location-section {
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 73px);
   display: flex;
   flex-direction: column;
   justify-content: center;

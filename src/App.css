@@ -57,7 +57,7 @@ body.theme-light {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 74px;
+  scroll-padding-top: 73px;
 }
 
 @media (min-width: 1025px) {
@@ -166,7 +166,6 @@ body {
 #inicio,
 #sobre-nos,
 #localizacao {
-  scroll-margin-top: 74px;
   scroll-snap-align: start;
 }
 

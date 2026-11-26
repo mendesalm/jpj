@@ -47,7 +47,8 @@
   z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
+  height: 72px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
