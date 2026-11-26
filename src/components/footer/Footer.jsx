@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <span className="footer-credit tabular-nums">
-          © {new Date().getFullYear()} Addex Softwares - contato@addex
+          © {new Date().getFullYear()} Addex Softwares - contato@addex.dev
         </span>
       </div>
     </footer>
