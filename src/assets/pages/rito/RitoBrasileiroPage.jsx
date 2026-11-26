@@ -186,7 +186,7 @@ const RitoBrasileiroPage = () => {
                   <span>Localização do Templo</span>
                 </Link>
                 <a href={LOJAS_URL} className="btn-primary-gold">
-                  <span>Sistema Lojas</span>
+                  <span>Acesso Restrito</span>
                 </a>
               </div>
             </article>

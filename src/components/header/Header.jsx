@@ -69,9 +69,20 @@ const Header = () => {
           <a
             href={LOJAS_URL}
             onClick={closeMenu}
-            className="btn-primary-gold header-btn"
+            className="btn-restrito"
+            aria-label="Acesso Restrito ao Sistema Lojas"
+            title="Acesso Restrito — Sistema Lojas"
           >
-            Sistema Lojas
+            <span className="btn-restrito-tri" aria-hidden="true">
+              <span className="material-symbols-outlined btn-restrito-icon">
+                lock
+              </span>
+            </span>
+            <span className="btn-restrito-body">Restrito</span>
+            <span className="btn-restrito-stripes" aria-hidden="true">
+              <span className="btn-restrito-stripe"></span>
+              <span className="btn-restrito-stripe"></span>
+            </span>
           </a>
         </div>
 
@@ -117,9 +128,19 @@ const Header = () => {
               <a
                 href={LOJAS_URL}
                 onClick={closeMenu}
-                className="btn-primary-gold mobile-action-btn"
+                className="btn-restrito btn-restrito-mobile"
+                aria-label="Acesso Restrito ao Sistema Lojas"
               >
-                Sistema Lojas
+                <span className="btn-restrito-tri" aria-hidden="true">
+                  <span className="material-symbols-outlined btn-restrito-icon">
+                    lock
+                  </span>
+                </span>
+                <span className="btn-restrito-body">Restrito</span>
+                <span className="btn-restrito-stripes" aria-hidden="true">
+                  <span className="btn-restrito-stripe"></span>
+                  <span className="btn-restrito-stripe"></span>
+                </span>
               </a>
             </div>
           </nav>
