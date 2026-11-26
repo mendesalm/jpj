@@ -32,6 +32,7 @@ export const INSTITUTIONAL_GROUPS = [
     subtitle: "Plataforma Maçônica",
     url: "https://e-sigma.app",
     secondary: [
+      { label: "Loja", url: "https://lojas.e-sigma.app/" },
       { label: "Harmonia", url: "https://harmonia.e-sigma.app" },
       { label: "Taverna", url: "https://taverna.e-sigma.app" },
     ],

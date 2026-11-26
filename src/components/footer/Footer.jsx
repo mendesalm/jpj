@@ -20,7 +20,7 @@ const Footer = () => {
           />
           <div className="footer-identity">
             <span className="footer-title">
-              Aug∴ Resp∴ Loja Simbólica João Pedro Junqueira, nº 2181
+              Aug∴ Resp∴ Benf∴ Loja Simbólica João Pedro Junqueira, nº 2181
             </span>
             <span className="footer-subtitle">
               Anápolis, Goiás · Rito Brasileiro
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <span className="footer-credit tabular-nums">
-          © {new Date().getFullYear()} ARLS Nº 2181 · Desenvolvido por Addex Softwares
+          © {new Date().getFullYear()} Addex Softwares - contato@addex
         </span>
       </div>
     </footer>

@@ -50,7 +50,7 @@ const LocationSection = () => {
                 <p>
                   Anápolis — Goiás
                   <br />
-                  Atendimento mediante agendamento
+                  loja2181@gmail.com
                 </p>
               </div>
               <div className="location-detail-row">
@@ -65,7 +65,7 @@ const LocationSection = () => {
                 <span className="material-symbols-outlined location-detail-icon" aria-hidden="true">
                   verified
                 </span>
-                <p>ARLS Nº 2181 · Rito Brasileiro</p>
+                <p>A∴ R∴ B∴ L∴ S∴ Nº 2181 · Rito Brasileiro</p>
               </div>
             </div>
 
