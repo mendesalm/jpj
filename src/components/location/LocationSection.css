@@ -163,6 +163,13 @@
   padding-top: 4px;
 }
 
+@media (max-width: 1024px) {
+  .location-section {
+    min-height: auto;
+    padding: 56px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .location-section {
     padding: 48px 16px;
@@ -177,7 +184,7 @@
   .location-map-backdrop {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 280px;
   }
 
   .location-map-scrim {
@@ -189,6 +196,12 @@
     border-radius: 0;
     border: none;
     border-top: 1px solid var(--dark-glass-border-strong);
-    padding: 24px;
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-card-actions .btn-primary-gold {
+    width: 100%;
   }
 }

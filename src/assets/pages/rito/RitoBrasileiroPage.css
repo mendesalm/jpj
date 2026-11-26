@@ -256,17 +256,23 @@
 
 @media (max-width: 768px) {
   .rito-hero {
-    padding: 112px 16px 36px;
+    padding: 96px 16px 32px;
   }
 
   .rito-hero-card {
-    padding: 26px 20px;
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
   }
 
   .rito-hero-top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
+  }
+
+  .rito-hero-emblem {
+    width: 72px;
+    height: 72px;
   }
 
   .rito-degrees-grid {
@@ -275,6 +281,21 @@
 
   .rito-timeline-section,
   .rito-degrees-section {
-    padding: 36px 16px;
+    padding: 32px 16px;
+  }
+
+  .rito-timeline-card,
+  .rito-degree-card,
+  .rito-lodge-callout {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rito-hero-actions .btn-glass,
+  .rito-hero-actions .btn-primary-gold,
+  .rito-callout-actions .btn-glass,
+  .rito-callout-actions .btn-primary-gold {
+    width: 100%;
   }
 }

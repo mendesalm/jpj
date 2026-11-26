@@ -81,6 +81,26 @@
 
 @media (max-width: 640px) {
   .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 24px 16px;
+    gap: 14px;
+  }
+
+  .footer-brand {
+    gap: 12px;
+  }
+
+  .footer-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer-title {
+    font-size: 14px;
+  }
+
+  .footer-subtitle {
+    font-size: 12.5px;
   }
 }
