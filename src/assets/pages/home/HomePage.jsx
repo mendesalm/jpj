@@ -86,7 +86,7 @@ const HomePage = () => {
           </div>
 
           <div className="hero-container">
-            <div className="hero-slider-dots" role="tablist" aria-label="Fotos do Templo">
+            <div className="hero-slider-dots reveal-on-scroll" role="tablist" aria-label="Fotos do Templo">
               {HERO_SLIDES.map((slide, index) => (
                 <button
                   key={slide.alt}
@@ -100,7 +100,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            <div className="hero-content-right">
+            <div className="hero-content-right reveal-on-scroll reveal-delay-1">
               <div className="hero-badge glass-card-enhanced">
                 <span className="material-symbols-outlined hero-badge-icon" aria-hidden="true">
                   auto_awesome
@@ -166,10 +166,13 @@ const HomePage = () => {
 
             <div className="pillars-grid">
               <article className="light-glass-card glass-card-light reveal-on-scroll reveal-delay-1">
-                <div className="light-card-icon-badge">
-                  <span className="material-symbols-outlined" aria-hidden="true">
-                    architecture
-                  </span>
+                <div className="light-card-icon-badge" aria-hidden="true">
+                  <svg className="pillar-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3L4.5 19" />
+                    <path d="M12 3L19.5 19" />
+                    <path d="M6.5 14.5L12 20L17.5 14.5" />
+                    <circle cx="12" cy="8.5" r="1.25" fill="currentColor" stroke="none" />
+                  </svg>
                 </div>
                 <h3 className="light-card-title">Nossa Missão</h3>
                 <p className="light-card-body">
@@ -178,10 +181,15 @@ const HomePage = () => {
               </article>
 
               <article className="light-glass-card glass-card-light reveal-on-scroll reveal-delay-2">
-                <div className="light-card-icon-badge">
-                  <span className="material-symbols-outlined" aria-hidden="true">
-                    visibility
-                  </span>
+                <div className="light-card-icon-badge" aria-hidden="true">
+                  <svg className="pillar-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2.5 12C5 7.5 8.3 5.5 12 5.5C15.7 5.5 19 7.5 21.5 12C19 16.5 15.7 18.5 12 18.5C8.3 18.5 5 16.5 2.5 12Z" />
+                    <circle cx="12" cy="12" r="3.2" />
+                    <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
+                    <path d="M12 2.5V4" />
+                    <path d="M6.5 4.2L7.5 5.4" />
+                    <path d="M17.5 4.2L16.5 5.4" />
+                  </svg>
                 </div>
                 <h3 className="light-card-title">Nossa Visão</h3>
                 <p className="light-card-body">
@@ -190,10 +198,11 @@ const HomePage = () => {
               </article>
 
               <article className="light-glass-card glass-card-light reveal-on-scroll reveal-delay-3">
-                <div className="light-card-icon-badge">
-                  <span className="material-symbols-outlined" aria-hidden="true">
-                    diversity_3
-                  </span>
+                <div className="light-card-icon-badge" aria-hidden="true">
+                  <svg className="pillar-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2.8 14.7 8.6 21 9.4 16.3 13.7 17.5 20 12 16.9 6.5 20 7.7 13.7 3 9.4 9.3 8.6 12 2.8" />
+                    <circle cx="12" cy="12" r="2.2" />
+                  </svg>
                 </div>
                 <h3 className="light-card-title">Nossos Valores</h3>
                 <ul className="light-values-list">

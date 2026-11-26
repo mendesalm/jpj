@@ -1,10 +1,16 @@
 import React from "react";
 import "./Footer.css";
 import logoSelo from "../../assets/images/logo_jpg.png";
+import bannerBg from "../../assets/images/banner-bg.jpg";
 
 const Footer = () => {
   return (
     <footer className="footer-section">
+      <div className="footer-bg-layer" aria-hidden="true">
+        <img src={bannerBg} alt="" className="footer-bg-img" />
+        <div className="footer-bg-overlay"></div>
+      </div>
+
       <div className="footer-container">
         <div className="footer-brand">
           <img

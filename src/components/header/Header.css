@@ -31,15 +31,15 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .header-bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5, 19, 44, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(5, 19, 44, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header-inner {
@@ -127,16 +127,40 @@
 }
 
 .nav-links-public a {
+  position: relative;
   color: var(--dark-on-surface-variant);
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: color 0.2s ease;
+  padding: 6px 2px;
+  transition: color 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 
-.nav-links-public a:hover {
+.nav-links-public a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--dark-accent), var(--dark-primary));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-links-public a:hover,
+.nav-links-public a:focus-visible {
   color: var(--dark-on-surface);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.nav-links-public a:hover::after,
+.nav-links-public a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .header-actions-desktop {

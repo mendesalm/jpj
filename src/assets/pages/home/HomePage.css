@@ -216,9 +216,18 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.hero-location-icon-btn:hover {
+.hero-slider-dot:focus-visible {
+  outline: 2px solid var(--dark-accent);
+  outline-offset: 2px;
+  transform: scale(1.2);
+}
+
+.hero-location-icon-btn:hover,
+.hero-location-icon-btn:focus-visible {
   background: var(--dark-glass);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 0 22px rgba(196, 155, 255, 0.35);
+  outline: none;
 }
 
 .hero-meta-strip {
@@ -346,25 +355,51 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.light-glass-card:hover {
-  transform: translateY(-4px);
+.light-glass-card:hover,
+.light-glass-card:focus-within {
+  transform: translateY(-6px) scale(1.01);
   background: rgba(255, 255, 255, 0.24);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.3),
+    0 28px 56px rgba(10, 22, 46, 0.22);
 }
 
 .light-card-icon-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background: var(--light-accent-soft);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(98, 18, 44, 0.25);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(122, 28, 58, 0.18),
+    rgba(91, 33, 182, 0.16)
+  );
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(98, 18, 44, 0.3);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 10px 24px rgba(98, 18, 44, 0.14);
   color: var(--light-primary);
-  font-size: 24px;
   flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.light-glass-card:hover .light-card-icon-badge,
+.light-glass-card:focus-within .light-card-icon-badge {
+  transform: translateY(-2px) scale(1.08);
+  border-color: rgba(91, 33, 182, 0.45);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    0 14px 28px rgba(91, 33, 182, 0.22);
 }
 
 .light-card-title {

@@ -57,6 +57,13 @@ body.theme-light {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 74px;
+}
+
+@media (min-width: 1025px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
 }
 
 html,
@@ -115,16 +122,22 @@ body {
 @keyframes revealUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(28px) scale(0.985);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  will-change: opacity, transform;
+}
+
 .reveal-on-scroll.is-revealed {
-  animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: revealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .reveal-on-scroll.is-revealed.reveal-delay-1 {
@@ -140,6 +153,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
   .reveal-on-scroll.is-revealed {
     animation: none;
   }
@@ -149,6 +167,11 @@ body {
 #sobre-nos,
 #localizacao {
   scroll-margin-top: 74px;
+  scroll-snap-align: start;
+}
+
+footer.footer-section {
+  scroll-snap-align: end;
 }
 
 /* Shared Buttons */
@@ -208,5 +231,7 @@ body {
 .btn-primary-gold:focus-visible,
 .btn-glass:focus-visible {
   outline: 2px solid var(--dark-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 24px rgba(196, 155, 255, 0.38);
 }
