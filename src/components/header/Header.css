@@ -148,34 +148,234 @@
   flex-shrink: 0;
 }
 
-/* 3D Faceted Ribbon Button ("Restrito") */
-.btn-restrito {
+/* Fluid Glass Pill Button ("Restrito") */
+.btn-fluid-glass {
   display: inline-flex;
   align-items: center;
-  height: 44px;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    135deg,
+    rgba(147, 197, 253, 0.28) 0%,
+    rgba(59, 130, 246, 0.22) 55%,
+    rgba(224, 242, 254, 0.16) 100%
+  );
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow:
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.72),
+    inset 0 -3px 8px rgba(59, 130, 246, 0.32),
+    0 10px 26px rgba(3, 18, 43, 0.45);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-decoration: none;
-  position: relative;
+  white-space: nowrap;
   cursor: pointer;
-  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), filter 0.22s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
 }
 
-.btn-restrito-svg {
-  height: 44px;
-  width: auto;
-  display: block;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+.btn-fluid-icon {
+  font-size: 16px;
+  color: #e0f2fe;
 }
 
-.btn-restrito:hover,
-.btn-restrito:focus-visible {
-  transform: translateY(-2px) scale(1.03);
-  filter: drop-shadow(0 0 14px rgba(212, 168, 67, 0.45));
+.btn-fluid-glass:hover,
+.btn-fluid-glass:focus-visible {
+  background: linear-gradient(
+    135deg,
+    rgba(186, 230, 253, 0.38) 0%,
+    rgba(59, 130, 246, 0.32) 55%,
+    rgba(255, 255, 255, 0.24) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.72);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.88),
+    inset 0 -3px 10px rgba(96, 165, 250, 0.45),
+    0 14px 32px rgba(3, 18, 43, 0.55);
   outline: none;
 }
 
-.btn-restrito-mobile {
+.btn-fluid-glass-mobile {
+  width: 100%;
+}
+
+/* Institutional Menu Icon Button & Popover */
+.institutional-menu-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-fluid-glass-icon {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin: 4px auto;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--dark-glass-frosted);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--dark-glass-border-strong);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.45),
+    0 8px 20px rgba(3, 18, 43, 0.35);
+  color: var(--dark-on-surface);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-fluid-glass-icon .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.btn-fluid-glass-icon:hover,
+.btn-fluid-glass-icon:focus-visible,
+.btn-fluid-glass-icon.is-open {
+  background: var(--dark-glass);
+  border-color: rgba(255, 255, 255, 0.72);
+  color: var(--dark-accent);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.7),
+    0 12px 26px rgba(3, 18, 43, 0.48);
+  outline: none;
+}
+
+.institutional-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  border-radius: var(--radius-lg);
+  background: rgba(5, 19, 44, 0.92);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--dark-glass-border-strong);
+  padding: 16px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.institutional-popover-header {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--dark-glass-border);
+}
+
+.institutional-popover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark-accent);
+}
+
+.institutional-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.institutional-group {
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--dark-glass-border);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.institutional-primary-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--dark-on-surface);
+  transition: color 0.2s ease;
+}
+
+.institutional-primary-link:hover,
+.institutional-primary-link:focus-visible {
+  color: var(--dark-accent);
+  outline: none;
+}
+
+.institutional-primary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.institutional-primary-title {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.institutional-primary-sub {
+  font-size: 11.5px;
+  color: var(--dark-on-surface-variant);
+}
+
+.institutional-ext-icon {
+  font-size: 16px;
+  color: var(--dark-accent);
+  flex-shrink: 0;
+}
+
+.institutional-secondary-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.institutional-secondary-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--dark-glass-subtle);
+  border: 1px solid var(--dark-glass-border);
+  color: var(--dark-on-surface-variant);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.institutional-secondary-chip:hover,
+.institutional-secondary-chip:focus-visible {
+  background: var(--dark-accent-soft);
+  border-color: var(--dark-glass-border-strong);
+  color: #ffffff;
+  outline: none;
+}
+
+.mobile-institutional-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid var(--dark-glass-border);
 }
 
 .hamburger-menu {
