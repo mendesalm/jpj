@@ -148,68 +148,22 @@
   flex-shrink: 0;
 }
 
-/* Geometric Angled Ribbon Button ("Restrito") */
+/* 3D Faceted Ribbon Button ("Restrito") */
 .btn-restrito {
   display: inline-flex;
   align-items: center;
-  height: 40px;
+  height: 44px;
   text-decoration: none;
   position: relative;
   cursor: pointer;
   transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), filter 0.22s ease;
 }
 
-.btn-restrito-tri {
-  width: 44px;
-  height: 40px;
-  display: inline-flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 6px;
-  background: linear-gradient(145deg, #e6c36a 0%, #9e2a4b 58%, #5e132b 100%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  position: relative;
-  z-index: 2;
-  margin-right: -11px;
-  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.45));
-}
-
-.btn-restrito-icon {
-  font-size: 15px;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-}
-
-.btn-restrito-body {
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 18px 0 22px;
-  background: linear-gradient(90deg, #62122c 0%, #7a1c3a 55%, #b8862d 100%);
-  border-top: 2px solid #e6c36a;
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-  color: #ffffff;
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.btn-restrito-stripes {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  margin-left: -4px;
-}
-
-.btn-restrito-stripe {
-  width: 6px;
-  height: 30px;
-  background: linear-gradient(180deg, #e6c36a 0%, #9e2a4b 65%, #62122c 100%);
-  transform: skewX(18deg);
-  border-radius: 1px;
+.btn-restrito-svg {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
 }
 
 .btn-restrito:hover,
