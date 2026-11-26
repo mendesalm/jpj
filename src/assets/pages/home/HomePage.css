@@ -20,30 +20,30 @@
 .section-heading-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .section-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--dark-primary);
+  color: var(--dark-accent);
 }
 
 .section-title {
   font-family: var(--font-headline);
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(26px, 3.6vw, 36px);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.02em;
   color: var(--dark-on-surface);
 }
 
 .section-subtitle {
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--dark-on-surface-variant);
   max-width: 620px;
 }
@@ -52,12 +52,11 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Full-Bleed Hero Section (100vh, Bottom-Left Glass Card) --- */
+/* --- Full-Bleed Atmospheric Hero (Bottom-Right Content, No Card) --- */
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 620px;
-  padding: 96px 24px 32px;
+  min-height: 100vh;
+  padding: 96px 24px 48px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -76,48 +75,45 @@
   object-position: center;
 }
 
-.hero-backdrop-gradient {
+.hero-backdrop-gradient-v {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(10, 15, 24, 0.88) 0%,
-      rgba(10, 15, 24, 0.35) 45%,
-      rgba(10, 15, 24, 0.25) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(10, 15, 24, 0.65) 0%,
-      rgba(10, 15, 24, 0.15) 55%,
-      transparent 100%
-    );
+  background: linear-gradient(
+    to top,
+    var(--dark-surface) 0%,
+    rgba(3, 18, 43, 0.65) 50%,
+    rgba(3, 18, 43, 0.25) 100%
+  );
+}
+
+.hero-backdrop-gradient-h {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(3, 18, 43, 0.85) 0%,
+    rgba(3, 18, 43, 0.4) 50%,
+    transparent 100%
+  );
 }
 
 .hero-container {
   position: relative;
-  z-index: 1;
+  z-index: 10;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
-.hero-glass-panel {
-  width: 100%;
-  max-width: 540px;
-  border-radius: var(--radius-xl);
-  background: rgba(13, 19, 31, 0.44);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--dark-glass-border);
-  padding: 26px 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+.hero-content-right {
+  max-width: 672px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  align-items: flex-end;
+  text-align: right;
+  gap: 16px;
 }
 
 .hero-badge {
@@ -125,365 +121,277 @@
   align-items: center;
   gap: 8px;
   border-radius: var(--radius-full);
-  background: var(--dark-accent-soft);
-  border: 1px solid rgba(226, 180, 90, 0.32);
-  padding: 4px 12px;
+  background: var(--dark-glass-frosted);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--dark-glass-border-strong);
+  padding: 6px 16px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--dark-primary);
+  color: var(--dark-accent);
 }
 
 .hero-badge-icon {
-  font-size: 15px;
-  color: var(--dark-primary);
+  font-size: 16px;
+  color: var(--dark-accent);
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(26px, 3.4vw, 38px);
+  font-size: clamp(32px, 5vw, 52px);
   font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--dark-on-surface);
 }
 
 .hero-description {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--dark-on-surface-variant);
 }
 
-.hero-cta-row {
+.hero-location-btn-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 4px;
 }
 
-.hero-btn-compact {
-  padding: 10px 18px;
-  font-size: 13.5px;
+.hero-location-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--dark-glass-frosted);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--dark-glass-border-strong);
+  color: var(--dark-accent);
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.hero-cta-icon-gold {
-  color: var(--dark-primary);
-  font-size: 17px;
+.hero-location-icon-btn:hover {
+  background: var(--dark-glass);
+  transform: translateY(-2px);
 }
 
 .hero-meta-strip {
   width: 100%;
-  padding-top: 14px;
+  padding-top: 16px;
+  margin-top: 4px;
   border-top: 1px solid var(--dark-glass-border);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 24px;
+  text-align: right;
 }
 
 .hero-meta-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .hero-meta-label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--dark-primary);
+  color: var(--dark-accent);
 }
 
 .hero-meta-value {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--dark-on-surface);
 }
 
-/* --- Mission, Vision & Values Section (100vh without overflow) --- */
+/* --- Silver-Gray Masonic Emblem Mission, Vision & Values Section --- */
 .pillars-section {
-  min-height: 100vh;
-  padding: 96px 24px 36px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--light-surface);
+  min-height: calc(100vh - 74px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 56px 24px;
+}
+
+.pillars-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pillars-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pillars-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.pillars-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
 .pillars-heading {
-  margin-bottom: 20px;
+  max-width: 672px;
+}
+
+.pillars-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--light-primary);
+}
+
+.pillars-title {
+  font-family: var(--font-headline);
+  font-size: clamp(26px, 3.6vw, 36px);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--light-on-surface);
+}
+
+.pillars-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--light-on-surface-variant);
 }
 
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 28px;
   align-items: stretch;
-  margin-bottom: 18px;
 }
 
-.glass-card {
+.light-glass-card {
   height: 100%;
-  border-radius: var(--radius-lg);
-  background: var(--dark-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--dark-glass-border);
-  padding: 22px;
+  min-height: 320px;
+  border-radius: var(--radius-xl);
+  background: var(--light-glass);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--light-glass-border);
+  padding: 36px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 18px;
+  transition: transform 0.3s ease;
 }
 
-.glass-card:hover {
-  border-color: rgba(226, 180, 90, 0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+.light-glass-card:hover {
+  transform: translateY(-4px);
 }
 
-.card-icon-badge {
+.light-card-icon-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-full);
-  background: var(--dark-accent-soft);
-  border: 1px solid rgba(226, 180, 90, 0.32);
-  color: var(--dark-primary);
-  font-size: 18px;
+  background: var(--light-accent-soft);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(98, 18, 44, 0.25);
+  color: var(--light-primary);
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
-.card-title {
+.light-card-title {
   font-family: var(--font-headline);
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 1.25;
-  color: var(--dark-on-surface);
+  line-height: 1.3;
+  color: var(--light-on-surface);
 }
 
-.card-body {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--dark-on-surface-variant);
+.light-card-body {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--light-on-surface-variant);
 }
 
-.values-list {
+.light-values-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.values-list li {
-  font-size: 13.5px;
-  line-height: 1.48;
-  color: var(--dark-on-surface-variant);
-}
-
-.values-list strong {
-  color: var(--dark-on-surface);
-  font-weight: 600;
-}
-
-/* --- Rito Brasileiro Feature Card --- */
-.rito-feature-card {
-  border-radius: var(--radius-xl);
-  background: var(--dark-glass-strong);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--dark-glass-border);
-  padding: 24px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-.rito-feature-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 720px;
-}
-
-.rito-feature-eyebrow-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.rito-emblem-wrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  background: var(--dark-accent-soft);
-  border: 1px solid rgba(226, 180, 90, 0.32);
-  padding: 5px;
-  flex-shrink: 0;
-}
-
-.rito-emblem-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.rito-feature-title {
-  font-family: var(--font-headline);
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--dark-on-surface);
-}
-
-.rito-feature-body {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--dark-on-surface-variant);
-}
-
-.rito-feature-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 10px;
-  flex-shrink: 0;
-  min-width: 205px;
-}
-
-.rito-feature-stat {
-  border-radius: var(--radius-md);
-  background: var(--dark-glass-subtle);
-  border: 1px solid var(--dark-glass-border);
-  padding: 12px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.rito-stat-label {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--dark-primary);
-}
-
-.rito-stat-value {
-  font-family: var(--font-headline);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--dark-on-surface);
-}
-
-/* --- Contact & Visitation Section --- */
-.contact-section {
-  padding: 24px 24px 64px;
-}
-
-.contact-glass-card {
-  border-radius: var(--radius-xl);
-  background: var(--dark-glass-strong);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--dark-glass-border);
-  padding: 32px 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-.contact-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 620px;
-}
-
-.contact-title {
-  font-family: var(--font-headline);
-  font-size: clamp(22px, 2.6vw, 26px);
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--dark-on-surface);
-}
-
-.contact-body {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--dark-on-surface-variant);
-}
-
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
   gap: 12px;
-  flex-shrink: 0;
+}
+
+.light-values-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--light-on-surface-variant);
+}
+
+.light-values-list strong {
+  color: var(--light-on-surface);
+  font-weight: 600;
 }
 
 /* --- Responsive Breakpoints --- */
 @media (max-width: 1024px) {
-  .hero-section {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .pillars-section {
-    min-height: auto;
-    padding: 64px 20px;
-  }
-
   .pillars-grid {
     grid-template-columns: 1fr;
   }
 
-  .rito-feature-card,
-  .contact-glass-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px;
-  }
-
-  .rito-feature-actions {
-    width: 100%;
+  .light-glass-card {
+    min-height: auto;
+    padding: 28px;
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 104px 16px 28px;
+    padding: 104px 16px 36px;
   }
 
-  .hero-glass-panel {
-    padding: 22px 18px;
-    gap: 12px;
+  .hero-content-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-location-btn-row {
+    justify-content: flex-start;
   }
 
   .hero-meta-strip {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 14px;
+    text-align: left;
   }
 
   .pillars-section {
     padding: 48px 16px;
-  }
-
-  .glass-card {
-    padding: 20px;
-  }
-
-  .contact-section {
-    padding: 16px 16px 48px;
   }
 }

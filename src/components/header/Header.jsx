@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logoImagem from "../../assets/images/logo_jpg.png";
+import logoEmblema from "../../assets/images/logoJPJ.png";
+import navbarBg from "../../assets/images/navbar-bg.jpg";
 import { LOJAS_URL } from "../../config/links";
 
 const Header = () => {
@@ -21,13 +22,20 @@ const Header = () => {
 
   return (
     <header className={`app-header ${isHeaderScrolled ? "scrolled" : ""}`}>
-      <div className="header-pill">
+      <div className="header-bg-layer" aria-hidden="true">
+        <img src={navbarBg} alt="" className="header-bg-img" />
+        <div className="header-bg-overlay"></div>
+      </div>
+
+      <div className="header-inner">
         <Link to="/#inicio" onClick={closeMenu} className="header-brand">
-          <img
-            src={logoImagem}
-            alt="Logo da Loja Maçônica João Pedro Junqueira nº 2181"
-            className="header-logo"
-          />
+          <span className="header-logo-badge">
+            <img
+              src={logoEmblema}
+              alt="Emblema da Loja João Pedro Junqueira nº 2181"
+              className="header-logo"
+            />
+          </span>
           <div className="header-brand-text">
             <span className="header-title">
               Loja Maçônica João Pedro Junqueira, nº 2181
@@ -101,7 +109,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#rito" onClick={closeMenu}>
+                <Link to="/rito-brasileiro" onClick={closeMenu}>
                   Rito Brasileiro
                 </Link>
               </li>

@@ -1,24 +1,37 @@
-/* Design System Tokens — Stitch Glassmorphism (Loja João Pedro Junqueira nº 2181) */
+/* Design System Tokens — Stitch Tipografia Moderna (Loja João Pedro Junqueira nº 2181) */
 :root,
 body.theme-dark,
 body.theme-light {
-  --dark-surface: #0a0f18;
-  --dark-surface-elevated: #111827;
-  --dark-on-surface: #f1f5f9;
-  --dark-on-surface-variant: #cbd5e1;
-  --dark-primary: #e2b45a;
-  --dark-on-primary: #140f05;
-  --dark-primary-hover: #ecc474;
-  --dark-glass: rgba(17, 25, 40, 0.34);
-  --dark-glass-strong: rgba(13, 19, 31, 0.48);
-  --dark-glass-subtle: rgba(255, 255, 255, 0.05);
-  --dark-glass-border: rgba(255, 255, 255, 0.16);
-  --dark-accent-soft: rgba(226, 180, 90, 0.14);
+  --dark-surface: #03122b;
+  --dark-surface-elevated: #071d3e;
+  --dark-on-surface: #ecf0ff;
+  --dark-on-surface-variant: #d7e3ff;
+  --dark-primary: #7a1c3a;
+  --dark-on-primary: #ffffff;
+  --dark-primary-hover: #922447;
+  --dark-purple: #5b21b6;
+  --dark-purple-hover: #6d28d9;
+  --dark-accent: #c49bff;
+  --dark-glass: rgba(10, 28, 62, 0.74);
+  --dark-glass-frosted: rgba(8, 22, 52, 0.54);
+  --dark-glass-strong: rgba(5, 19, 44, 0.88);
+  --dark-glass-subtle: rgba(121, 71, 163, 0.18);
+  --dark-glass-border: rgba(168, 120, 240, 0.24);
+  --dark-glass-border-strong: rgba(196, 155, 255, 0.42);
+  --dark-accent-soft: rgba(122, 28, 58, 0.36);
 
-  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-headline: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --light-surface: #f5efe6;
+  --light-on-surface: #0a162e;
+  --light-on-surface-variant: #1e293b;
+  --light-primary: #62122c;
+  --light-accent-soft: rgba(122, 28, 58, 0.12);
+  --light-glass: rgba(255, 252, 247, 0.56);
+  --light-glass-border: rgba(255, 255, 255, 0.72);
+
+  --font-display: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Red Hat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Red Hat Mono", monospace;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -31,7 +44,7 @@ body.theme-light {
   --text-color-secondary: var(--dark-on-surface-variant);
   --primary-color: var(--dark-primary);
   --border-color: var(--dark-glass-border);
-  --box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --box-shadow: 0 24px 56px rgba(3, 18, 43, 0.65);
 }
 
 *,
@@ -69,10 +82,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--dark-surface);
-  background-image:
-    radial-gradient(circle at 15% 18%, rgba(226, 180, 90, 0.12), transparent 45%),
-    radial-gradient(circle at 85% 48%, rgba(30, 58, 138, 0.18), transparent 48%),
-    radial-gradient(circle at 50% 85%, rgba(226, 180, 90, 0.08), transparent 45%);
   position: relative;
 }
 
@@ -89,22 +98,67 @@ body {
   user-select: none;
 }
 
-#inicio,
-#sobre-nos,
-#rito,
-#localizacao,
-#contato {
-  scroll-margin-top: 96px;
+.glass-card-enhanced {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 0 rgba(196, 155, 255, 0.1),
+    0 24px 56px rgba(3, 18, 43, 0.65);
 }
 
-/* Shared Glassmorphism Buttons */
+.glass-card-light {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 0 rgba(122, 28, 58, 0.08),
+    0 24px 50px rgba(10, 22, 46, 0.14);
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll.is-revealed {
+  animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-on-scroll.is-revealed.reveal-delay-1 {
+  animation-delay: 100ms;
+}
+
+.reveal-on-scroll.is-revealed.reveal-delay-2 {
+  animation-delay: 200ms;
+}
+
+.reveal-on-scroll.is-revealed.reveal-delay-3 {
+  animation-delay: 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll.is-revealed {
+    animation: none;
+  }
+}
+
+#inicio,
+#sobre-nos,
+#localizacao {
+  scroll-margin-top: 74px;
+}
+
+/* Shared Buttons */
 .btn-primary-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   border-radius: var(--radius-full);
-  background-color: var(--dark-primary);
+  background: linear-gradient(90deg, var(--dark-primary), var(--dark-purple));
   color: var(--dark-on-primary);
   padding: 12px 24px;
   font-family: var(--font-body);
@@ -112,15 +166,16 @@ body {
   font-weight: 600;
   letter-spacing: 0.01em;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(91, 33, 182, 0.3);
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary-gold:hover {
-  background-color: var(--dark-primary-hover);
+  background: linear-gradient(90deg, var(--dark-primary-hover), var(--dark-purple-hover));
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(226, 180, 90, 0.25);
+  box-shadow: 0 12px 28px rgba(122, 28, 58, 0.42);
 }
 
 .btn-glass {
@@ -129,8 +184,8 @@ body {
   justify-content: center;
   gap: 8px;
   border-radius: var(--radius-full);
-  background-color: var(--dark-glass-subtle);
-  border: 1px solid var(--dark-glass-border);
+  background-color: var(--dark-glass-frosted);
+  border: 1px solid var(--dark-glass-border-strong);
   color: var(--dark-on-surface);
   padding: 12px 24px;
   font-family: var(--font-body);
@@ -138,20 +193,20 @@ body {
   font-weight: 600;
   letter-spacing: 0.01em;
   text-decoration: none;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-glass:hover {
   background-color: var(--dark-glass);
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(196, 155, 255, 0.6);
   transform: translateY(-1px);
 }
 
 .btn-primary-gold:focus-visible,
 .btn-glass:focus-visible {
-  outline: 2px solid var(--dark-primary);
+  outline: 2px solid var(--dark-accent);
   outline-offset: 2px;
 }
