@@ -1,13 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./HomePage.css";
 import LocationSection from "../../../components/location/LocationSection.jsx";
 import Footer from "../../../components/footer/Footer.jsx";
+import imgSlider1 from "../../images/slider/slider1.jpg";
 import imgSlider2 from "../../images/slider/slider2.jpg";
+import imgSlider3 from "../../images/slider/slider3.jpg";
+import imgSlider4 from "../../images/slider/slider4.jpg";
+import imgSlider6 from "../../images/slider/slider6.jpg";
 import bgCinzaJpj from "../../images/BG-cinza-jpj.jpg";
+
+const HERO_SLIDES = [
+  { src: imgSlider2, alt: "Interior do Templo da Loja Maçônica João Pedro Junqueira nº 2181" },
+  { src: imgSlider1, alt: "Templo da Loja Maçônica João Pedro Junqueira nº 2181 — Vista 1" },
+  { src: imgSlider3, alt: "Templo da Loja Maçônica João Pedro Junqueira nº 2181 — Vista 2" },
+  { src: imgSlider4, alt: "Templo da Loja Maçônica João Pedro Junqueira nº 2181 — Vista 3" },
+  { src: imgSlider6, alt: "Templo da Loja Maçônica João Pedro Junqueira nº 2181 — Vista 4" },
+];
 
 const HomePage = () => {
   const location = useLocation();
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     if (location.pathname === "/" && location.hash) {
@@ -50,19 +70,36 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <main className="home-main">
-        {/* Full-Bleed Atmospheric Hero (Compact Bottom-Right Info, No Card) */}
+        {/* Full-Bleed Atmospheric Hero Slider (Compact Bottom-Right Info, No Card) */}
         <section id="inicio" className="hero-section" aria-label="Início">
           <div className="hero-backdrop" aria-hidden="true">
-            <img
-              src={imgSlider2}
-              alt="Interior do Templo da Loja Maçônica João Pedro Junqueira nº 2181 em Anápolis, Goiás"
-              className="hero-backdrop-img"
-            />
+            {HERO_SLIDES.map((slide, index) => (
+              <img
+                key={slide.alt}
+                src={slide.src}
+                alt={slide.alt}
+                className={`hero-backdrop-img ${index === activeSlide ? "is-active" : ""}`}
+              />
+            ))}
             <div className="hero-backdrop-gradient-v"></div>
             <div className="hero-backdrop-gradient-h"></div>
           </div>
 
           <div className="hero-container">
+            <div className="hero-slider-dots" role="tablist" aria-label="Fotos do Templo">
+              {HERO_SLIDES.map((slide, index) => (
+                <button
+                  key={slide.alt}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === activeSlide}
+                  aria-label={`Ver foto ${index + 1} do templo`}
+                  className={`hero-slider-dot ${index === activeSlide ? "is-active" : ""}`}
+                  onClick={() => setActiveSlide(index)}
+                />
+              ))}
+            </div>
+
             <div className="hero-content-right">
               <div className="hero-badge glass-card-enhanced">
                 <span className="material-symbols-outlined hero-badge-icon" aria-hidden="true">
