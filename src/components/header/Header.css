@@ -22,20 +22,20 @@
 .header-inner {
   position: relative;
   z-index: 10;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  height: 72px;
-  padding: 0 24px;
+  height: 76px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   color: var(--dark-on-surface);
   min-width: 0;
@@ -46,14 +46,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-full);
   background: var(--dark-glass-subtle);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--dark-glass-border-strong);
-  padding: 4px;
+  padding: 3px;
   flex-shrink: 0;
 }
 

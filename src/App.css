@@ -57,7 +57,7 @@ body.theme-light {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 73px;
+  scroll-padding-top: 77px;
 }
 
 @media (min-width: 1025px) {
@@ -141,15 +141,15 @@ body {
 }
 
 .reveal-on-scroll.is-revealed.reveal-delay-1 {
-  animation-delay: 100ms;
+  animation-delay: 120ms;
 }
 
 .reveal-on-scroll.is-revealed.reveal-delay-2 {
-  animation-delay: 200ms;
+  animation-delay: 1050ms;
 }
 
 .reveal-on-scroll.is-revealed.reveal-delay-3 {
-  animation-delay: 300ms;
+  animation-delay: 2000ms;
 }
 
 @media (prefers-reduced-motion: reduce) {

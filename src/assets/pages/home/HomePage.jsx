@@ -101,17 +101,16 @@ const HomePage = () => {
             </div>
 
             <div className="hero-content-right reveal-on-scroll reveal-delay-1">
-              <div className="hero-badge glass-card-enhanced">
-                <span className="material-symbols-outlined hero-badge-icon" aria-hidden="true">
-                  auto_awesome
-                </span>
-                <span>ARLS Nº 2181 · Anápolis, Goiás</span>
-              </div>
-
-              <h1 className="hero-title">Loja João Pedro Junqueira</h1>
+              <h1 className="hero-title">
+                Loja Maçônica
+                <br />
+                João Pedro Junqueira
+                <br />
+                nº 2181
+              </h1>
 
               <p className="hero-description">
-                Há 44 anos tornando melhores os Homens de Bem — uma Oficina dedicada à sabedoria, à fraternidade e ao aperfeiçoamento ético e intelectual.
+                Tornando melhores os Homens de Bem!
               </p>
 
               <div className="hero-location-btn-row">
@@ -136,11 +135,11 @@ const HomePage = () => {
                   <span className="hero-meta-value tabular-nums">44 anos de história</span>
                 </div>
                 <div className="hero-meta-item">
-                  <span className="hero-meta-label">Rito Praticado</span>
+                  <span className="hero-meta-label">Rito</span>
                   <span className="hero-meta-value">Rito Brasileiro</span>
                 </div>
                 <div className="hero-meta-item">
-                  <span className="hero-meta-label">Sessões Ordinárias</span>
+                  <span className="hero-meta-label">Sessões</span>
                   <span className="hero-meta-value tabular-nums">Sextas-feiras, 19h30</span>
                 </div>
               </div>
@@ -174,7 +173,7 @@ const HomePage = () => {
                     <circle cx="12" cy="8.5" r="1.25" fill="currentColor" stroke="none" />
                   </svg>
                 </div>
-                <h3 className="light-card-title">Nossa Missão</h3>
+                <h3 className="light-card-title">Missão</h3>
                 <p className="light-card-body">
                   Promover o aperfeiçoamento moral e intelectual de nossos membros, desbastando a pedra bruta para transformar homens bons em líderes exemplares para suas famílias e para a sociedade.
                 </p>
@@ -191,7 +190,7 @@ const HomePage = () => {
                     <path d="M17.5 4.2L16.5 5.4" />
                   </svg>
                 </div>
-                <h3 className="light-card-title">Nossa Visão</h3>
+                <h3 className="light-card-title">Visão</h3>
                 <p className="light-card-body">
                   Ser reconhecida em Anápolis e em todo o estado de Goiás como uma Oficina de excelência, um farol de sabedoria, ética e fraternidade voltado à formação de cidadãos atuantes.
                 </p>
@@ -204,7 +203,7 @@ const HomePage = () => {
                     <circle cx="12" cy="12" r="2.2" />
                   </svg>
                 </div>
-                <h3 className="light-card-title">Nossos Valores</h3>
+                <h3 className="light-card-title">Valores</h3>
                 <ul className="light-values-list">
                   <li>
                     <strong>Fraternidade:</strong> Cultivar laços de união, lealdade e apoio mútuo entre os Irmãos.
