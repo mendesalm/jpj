@@ -226,7 +226,7 @@
 .hero-location-icon-btn:focus-visible {
   background: var(--dark-glass);
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 0 22px rgba(196, 155, 255, 0.35);
+  box-shadow: 0 0 22px rgba(212, 168, 67, 0.35);
   outline: none;
 }
 
@@ -375,7 +375,7 @@
   background: linear-gradient(
     135deg,
     rgba(122, 28, 58, 0.18),
-    rgba(91, 33, 182, 0.16)
+    rgba(212, 168, 67, 0.18)
   );
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
@@ -396,10 +396,10 @@
 .light-glass-card:hover .light-card-icon-badge,
 .light-glass-card:focus-within .light-card-icon-badge {
   transform: translateY(-2px) scale(1.08);
-  border-color: rgba(91, 33, 182, 0.45);
+  border-color: rgba(212, 168, 67, 0.55);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.9),
-    0 14px 28px rgba(91, 33, 182, 0.22);
+    0 14px 28px rgba(122, 28, 58, 0.22);
 }
 
 .light-card-title {

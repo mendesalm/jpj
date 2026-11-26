@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logoEmblema from "../../assets/images/logoJPJ.png";
-import navbarBg from "../../assets/images/navbar-bg.jpg";
 import { LOJAS_URL } from "../../config/links";
 
 const Header = () => {
@@ -22,11 +21,6 @@ const Header = () => {
 
   return (
     <header className={`app-header ${isHeaderScrolled ? "scrolled" : ""}`}>
-      <div className="header-bg-layer" aria-hidden="true">
-        <img src={navbarBg} alt="" className="header-bg-img" />
-        <div className="header-bg-overlay"></div>
-      </div>
-
       <div className="header-inner">
         <Link to="/#inicio" onClick={closeMenu} className="header-brand">
           <span className="header-logo-badge">
