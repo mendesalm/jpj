@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import logoSelo from "../../assets/images/logo_jpg.png";
+import logoAddex from "../../assets/images/logo-addex.png";
 import bannerBg from "../../assets/images/banner-bg.jpg";
 
 const Footer = () => {
@@ -27,9 +28,43 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <span className="footer-credit tabular-nums">
-          © {new Date().getFullYear()} Addex Softwares - contato@addex.dev
-        </span>
+
+        <div className="footer-credit-wrap">
+          <div className="footer-credit-text tabular-nums">
+            <span>© {new Date().getFullYear()} Addex Solutions</span>
+            <div className="footer-credit-links">
+              <a
+                href="mailto:contato@addex.dev"
+                className="footer-credit-link"
+              >
+                contato@addex.dev
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="https://addex.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-credit-link"
+              >
+                https://addex.dev
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="https://addex.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-addex-logo-link"
+            aria-label="Addex Solutions — https://addex.dev"
+          >
+            <img
+              src={logoAddex}
+              alt="Logo Addex Solutions"
+              className="footer-addex-logo"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
